@@ -27,7 +27,7 @@ function DrawerNavigator() {
             }}
           >
             <Image
-              source={require('../../assets/icons/burger-menu.png')}
+              source={require('../assets/icons/burger-menu.png')}
             />
           </TouchableOpacity>
         )

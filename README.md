@@ -7,11 +7,16 @@ A planner application for Android and iOS.
 
 ### Generate Spring boot project
 - Generate the Spring boot project with [Spring Initializr](https://start.spring.io/) including the following dependencies:
-    - Spring Web
     - Spring Data JPA
     - Spring Security
-    - H2 Database (for development)
-    - MySQL or PostgreSQL (for production)
+
+### Project important source files
+- controller : contains REST controllers for handling HTTP requests and using the services.
+- service : contains business logic and uses the repositories.
+- repository : contains interfaces for data access
+- model/ : contains entity classes
+- pom.xml : describes the project's structure and configuration, including its dependencies, build settings, and other configurations. Dependencies are lists all the libraries that the project depends on; Maven will download these libraries from a repository and include them in the build.
+- application.properties : set up a variety of configurations, such as database connections, server ports, logging levels, and more.
 
 ## Frontend setup
 - Install [Node.js](https://nodejs.org/en) v20.15.0 (LTS).
@@ -38,15 +43,7 @@ When saving a file in your text editor, Metro automatically detects the changes 
 For more informations : [Get Started Without a Framework](https://reactnative.dev/docs/getting-started-without-a-framework), [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment)
 
 ### Packages to install
-- npm install axios
-- npm install @react-navigation/native @react-navigation/stack
-- npm install react-native-gesture-handler
-- npm install react-native-elements
-
-Optionnel (?) :
-- npm install react-native-screens react-native-safe-area-context
-- npm install @react-native-community/masked-view
-
+See the dependencies in the package.json in frontent/
 
 # VSCode setup 
 ## Fundamentals
@@ -62,6 +59,11 @@ Optionnel (?) :
 - Flow Language Support
 - ESLint
 - Prettier - Javascript formatter
+- Auto Import
 
 ### Troubleshooting
-Press Ctrl + Alt + P and select "Clean Java Language Server Workspace" if the following error occurs : `<file> is not on the classpath of project planner, only syntax errors are reported`
+- Update all the packages : `npm update`
+- Reset the server cache : `npm start -- --reset-cache`
+- See the outdated packages : `npm outdated`
+- Update a specific package to the latest version : `npm <package>@latest`
+- `<file> is not on the classpath of project planner, only syntax errors are reported` error : Press Ctrl + Shift + P and select "Clean Java Language Server Workspace".
